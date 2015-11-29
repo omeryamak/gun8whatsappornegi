@@ -9,10 +9,10 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIActionSheetDelegate {
 
     var ref = Firebase(url: "https://gun8.firebaseio.com/")
-
+    var girisYapildi :Int = 0
     
     @IBOutlet weak var txtSifre: UITextField!
     @IBOutlet weak var txtKullaniciAdi: UITextField!
@@ -29,11 +29,15 @@ class ViewController: UIViewController {
                     self.presentViewController(alert, animated: true, completion: nil)
                     
                 } else {
+                    
+                    self.girisYapildi = 1
+                    
                     // We are now logged in
-                    let alert = UIAlertController(title: "Logged-in", message: "Login complete", preferredStyle: UIAlertControllerStyle.Alert)
+                /*    let alert = UIAlertController(title: "Logged-in", message: "Login complete", preferredStyle: UIAlertControllerStyle.Alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.presentViewController(alert, animated: true, completion: nil) */
+                    self.performSegueWithIdentifier("userlist", sender: authData)
                 }
         })
 
@@ -60,9 +64,19 @@ class ViewController: UIViewController {
                 }
 
         })
-        
-        
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var messagesVc = segue.destinationViewController as! UserListTableViewController
+        if let authData = sender as? FAuthData {
+            messagesVc.user = authData
+            messagesVc.ref = ref
+           
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

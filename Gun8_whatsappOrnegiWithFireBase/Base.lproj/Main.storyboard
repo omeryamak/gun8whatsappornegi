@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YXd-g5-7FR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -32,18 +32,6 @@
                                     <rect key="frame" x="52" y="172" width="304" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-FU-szW">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Giriş">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="297" y="233" width="59" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="btnLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FbX-0E-6le"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgZ-2n-SLX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Kayıt Ol">
@@ -56,33 +44,213 @@
                                     <action selector="btnRegister:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ptb-Fq-6DY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-FU-szW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Giriş">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="297" y="233" width="59" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FbX-0E-6le"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="E7C-0w-hcL"/>
                                 <exclude reference="dZt-9c-Uo3"/>
-                                <exclude reference="mLk-FU-szW"/>
                                 <exclude reference="KgZ-2n-SLX"/>
+                                <exclude reference="mLk-FU-szW"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="E7C-0w-hcL"/>
                                 <include reference="dZt-9c-Uo3"/>
-                                <include reference="mLk-FU-szW"/>
                                 <include reference="KgZ-2n-SLX"/>
+                                <include reference="mLk-FU-szW"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="vXe-K0-FqX"/>
                     <connections>
                         <outlet property="txtKullaniciAdi" destination="E7C-0w-hcL" id="1Ug-Xy-w3R"/>
                         <outlet property="txtSifre" destination="dZt-9c-Uo3" id="58N-ua-iEe"/>
+                        <segue destination="AQg-9i-ezH" kind="show" identifier="userlist" id="tQD-Cq-Fda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439.5" y="429"/>
+            <point key="canvasLocation" x="2053.5" y="429"/>
+        </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="Ker-qF-bzX">
+            <objects>
+                <viewController id="83J-Ie-41j" customClass="MessagesViewController" customModule="Gun8_whatsappOrnegiWithFireBase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="44d-Po-wIA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kss-Wt-PTf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9I4-2G-bxm">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryE-aX-W2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="-249"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="j82-78-jqd">
+            <objects>
+                <tableViewController id="AQg-9i-ezH" customClass="UserListTableViewController" customModule="Gun8_whatsappOrnegiWithFireBase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kqF-4S-3dC">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="cr1-a1-2JV" detailTextLabel="gtq-0O-g5y" style="IBUITableViewCellStyleSubtitle" id="fJv-AL-UZE">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fJv-AL-UZE" id="ul2-4N-HNh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cr1-a1-2JV">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gtq-0O-g5y">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="MGE-yE-Ejy" kind="show" identifier="edituser" id="Qbu-7T-GA5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AQg-9i-ezH" id="PDm-Xv-qZp"/>
+                            <outlet property="delegate" destination="AQg-9i-ezH" id="d4A-Fr-VRj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="qUQ-X0-iJh">
+                        <barButtonItem key="rightBarButtonItem" title="User Add" id="wM8-C4-P0H">
+                            <connections>
+                                <action selector="userAdd:" destination="AQg-9i-ezH" id="1Ps-QY-Ote"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="MGE-yE-Ejy" kind="show" identifier="adduser" id="jac-mW-6G6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4BC-zn-tGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2859" y="429"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="1jb-HF-1XS">
+            <objects>
+                <viewController id="MGE-yE-Ejy" customClass="UserAddViewController" customModule="Gun8_whatsappOrnegiWithFireBase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cgH-GF-0gz"/>
+                        <viewControllerLayoutGuide type="bottom" id="HXJ-Vy-dx2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PsS-Mn-H8M">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQG-fg-o3g">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="66" y="142" width="287" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ai9-O2-kCX">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="66" y="218" width="287" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yKb-5o-NQM">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="66" y="180" width="287" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="QQG-fg-o3g"/>
+                                <exclude reference="Ai9-O2-kCX"/>
+                                <exclude reference="yKb-5o-NQM"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="QQG-fg-o3g"/>
+                                <include reference="Ai9-O2-kCX"/>
+                                <include reference="yKb-5o-NQM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="xjT-f3-MeW">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="4P5-Pa-NFY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="enZ-VH-I7M">
+                            <connections>
+                                <action selector="AddButton:" destination="MGE-yE-Ejy" id="hoO-zR-oXZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtmailaddress" destination="Ai9-O2-kCX" id="wh2-YB-f3F"/>
+                        <outlet property="txtname" destination="QQG-fg-o3g" id="rJW-Zp-CZR"/>
+                        <outlet property="txtphonenumber" destination="yKb-5o-NQM" id="MJV-Xp-z7a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ksl-Tp-6zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3729" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n4Y-Tl-tSV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YXd-g5-7FR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cV4-Ku-Q3F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="AOT-Dj-flu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVy-s1-am1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135.5" y="429"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jac-mW-6G6"/>
+    </inferredMetricsTieBreakers>
 </document>
